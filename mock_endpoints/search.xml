@@ -1,0 +1,55 @@
+<!--http://api.chartlyrics.com/apiv1.asmx/SearchLyricText?lyricText=ice%20ice%20baby-->
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSearchLyricResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://api.chartlyrics.com/">
+    <SearchLyricResult>
+        <TrackId>0</TrackId>
+        <LyricChecksum>3b229d07319ac6babf0b0126e4140d21</LyricChecksum>
+        <LyricId>387</LyricId>
+        <SongUrl>http://www.chartlyrics.com/voNVLf2q7EGt3d-FkThV7w/Ice+Ice+Baby.aspx</SongUrl>
+        <ArtistUrl>http://www.chartlyrics.com/voNVLf2q7EGt3d-FkThV7w.aspx</ArtistUrl>
+        <Artist>Vanilla Ice</Artist>
+        <Song>Ice Ice Baby</Song>
+        <SongRank>9</SongRank>
+    </SearchLyricResult>
+    <SearchLyricResult>
+        <TrackId>0</TrackId>
+        <LyricChecksum>2c33d3bf7d5c8c690d5f2424afc62b66</LyricChecksum>
+        <LyricId>101627</LyricId>
+        <SongUrl>http://www.chartlyrics.com/uRT5PbzgPEmHWsQS-E7NrQ/Ice+Ice+Baby.aspx</SongUrl>
+        <ArtistUrl>http://www.chartlyrics.com/uRT5PbzgPEmHWsQS-E7NrQ.aspx</ArtistUrl>
+        <Artist>Crazy Frog</Artist>
+        <Song>Ice Ice Baby</Song>
+        <SongRank>4</SongRank>
+    </SearchLyricResult>
+    <SearchLyricResult>
+        <TrackId>0</TrackId>
+        <LyricChecksum>4b1985bbbc1ea0bcb5e6e06cbc733108</LyricChecksum>
+        <LyricId>227261</LyricId>
+        <SongUrl>http://www.chartlyrics.com/ruqd_0_at0Khnjb-3T_HBg/Bk+Baby.aspx</SongUrl>
+        <ArtistUrl>http://www.chartlyrics.com/ruqd_0_at0Khnjb-3T_HBg.aspx</ArtistUrl>
+        <Artist>Ben Kweller</Artist>
+        <Song>Bk Baby</Song>
+        <SongRank>3</SongRank>
+    </SearchLyricResult>
+    <SearchLyricResult>
+        <TrackId>0</TrackId>
+        <LyricChecksum>8ef98a8ae33c0c40bb394e01bd957b4c</LyricChecksum>
+        <LyricId>164191</LyricId>
+        <SongUrl>http://www.chartlyrics.com/voNVLf2q7EGt3d-FkThV7w/Too+Cold.aspx</SongUrl>
+        <ArtistUrl>http://www.chartlyrics.com/voNVLf2q7EGt3d-FkThV7w.aspx</ArtistUrl>
+        <Artist>Vanilla Ice</Artist>
+        <Song>Too Cold</Song>
+        <SongRank>2</SongRank>
+    </SearchLyricResult>
+    <SearchLyricResult>
+        <TrackId>0</TrackId>
+        <LyricChecksum>d7dc8b3174627e5fdb00c8d179b4bbcf</LyricChecksum>
+        <LyricId>184543</LyricId>
+        <SongUrl>http://www.chartlyrics.com/voNVLf2q7EGt3d-FkThV7w/Ice+Ice+Baby+(club+mix).aspx</SongUrl>
+        <ArtistUrl>http://www.chartlyrics.com/voNVLf2q7EGt3d-FkThV7w.aspx</ArtistUrl>
+        <Artist>Vanilla Ice</Artist>
+        <Song>Ice Ice Baby (club mix)</Song>
+        <SongRank>1</SongRank>
+    </SearchLyricResult>
+    <SearchLyricResult xsi:nil="true" />
+</ArrayOfSearchLyricResult>
