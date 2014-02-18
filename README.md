@@ -1,4 +1,4 @@
-# The Stupidest Program In the World
+# A Not-Very-Useful Program
 
 ## Orientation
 
@@ -26,7 +26,7 @@ And thought:
 
 ## Is this serious?
 
-I used this as a toy project while starting to learn Go. The world doesn't need another TODO or Blog application.
+I used this as a toy project while starting to learn Go. The world doesn't need another TODO or Blog application. It doesn't need this, either, but I got to read Fugazi and Gorilla Biscuits lyrics while building it.
 
 It should behave correctly. However, it is not production-quality software.
 
