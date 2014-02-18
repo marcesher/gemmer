@@ -103,6 +103,6 @@ func main() {
 	fmt.Printf("Your song is %f%% covered by the existing gem list\n\n", cov)
 	fmt.Printf("Words found in both the song lyrics and existing gems: %v\n\n", intersect)
 	fmt.Printf("Try out these names for your next gem!\n\n")
-	sort.Sort(sort.Reverse(SortedByLen(SortedByLen{diff[0:]})))
+	sort.Sort(sort.Reverse(SortedByLen{diff[0:]}))
 	fmt.Printf("%v\n\n", diff)
 }
