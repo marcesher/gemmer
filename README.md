@@ -11,7 +11,7 @@ For example, `gemmer -artist="weird" -song="eat it"` will show you that, alas, "
 
 ![Gemmer Screenshot](/img/gemmer_ss.png)
 
-This program is written in [Go](http://golang.org). You can build it from source or [download a release](LINK HERE)
+This program is written in [Go](http://golang.org). You can build it from source or [download a release](https://github.com/marcesher/gemmer/releases)
 
 
 ## Origin Story
