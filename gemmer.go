@@ -6,10 +6,14 @@ import (
 	"github.com/deckarep/golang-set"
 	"github.com/marcesher/gemmer/fetcher"
 	"io/ioutil"
+	"net/http"
+	"os"
 	"regexp"
 	"sort"
 	"strings"
 )
+
+const GEMFILE = "gemlist.txt"
 
 type SortedByLen struct{ sort.StringSlice }
 
@@ -52,11 +56,31 @@ func PrepareText(text string) string {
 	return strings.ToLower(clean)
 }
 
+///GetGemList fetches the gem file if it does not exist
+func GetGemList() {
+	if _, err := os.Stat(GEMFILE); os.IsNotExist(err) {
+		fmt.Printf("Gem file %v Does not exist... downloading", GEMFILE)
+		res, err := http.Get("https://raw.github.com/marcesher/gemmer/master/gemlist.txt")
+		if err != nil {
+			panic(err)
+		}
+		body, err := ioutil.ReadAll(res.Body)
+		if err != nil {
+			panic(err)
+		}
+		err = ioutil.WriteFile(GEMFILE, body, 0644)
+		if err != nil {
+			panic(err)
+		}
+	}
+}
+
 func main() {
 	artist := flag.String("artist", "vanilla ice", "The song artist")
 	song := flag.String("song", "ice ice baby", "The song")
 	flag.Parse()
 
+	GetGemList()
 	lyric, err := fetcher.SearchWithLuck(*artist, *song)
 
 	if err != nil {
@@ -73,7 +97,7 @@ func main() {
 		return
 	}
 	clean := PrepareText(lyric.LyricText)
-	gemlist, _ := ioutil.ReadFile("gemlist.txt")
+	gemlist, _ := ioutil.ReadFile(GEMFILE)
 	diff, intersect, cov := Coverage(strings.Fields(clean), strings.Fields(string(gemlist)))
 	fmt.Printf("\n\nSource: Artist - %v;  Song - %v; Url - %v\n\n", lyric.Artist, lyric.Song, lyric.Url)
 	fmt.Printf("Your song is %f%% covered by the existing gem list\n\n", cov)
