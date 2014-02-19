@@ -33,7 +33,7 @@ It should behave correctly. However, it is not production-quality software.
 ## Known limitations
 
 1. Due to severe restrictions on the ChartLyrics API, you can run this program every 30 seconds or so. More frequently and you get errors
-1. ChartLyrics doesn't publish many [Avett Brothers](http://www.theavettbrothers.com/) lyrics. Consequently, most suggestions will remain banal. As a consolation, try `gemmer -artist="avett" -song="indolence"`
+1. ChartLyrics doesn't publish many [Avett Brothers](http://www.theavettbrothers.com/) lyrics. Consequently, most suggestions will remain banal. As a consolation, try `gemmer -artist="ll cool j" -song="boomin"`
 1. This program does nothing to elevate the nature of gem naming. Were it more ambitious, it might use as its sources Chaucer, Milton, Tennyson, Coleridge, Byron, Keats. It does, however, occasionally surprise with fitting names such as "youngbut"
 
 ## Roadmap
