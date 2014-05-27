@@ -3,14 +3,15 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/deckarep/golang-set"
-	"github.com/marcesher/gemmer/fetcher"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"regexp"
 	"sort"
 	"strings"
+
+	"github.com/deckarep/golang-set"
+	"github.com/marcesher/gemmer/fetcher"
 )
 
 const GEMFILE = "gemlist.txt"
@@ -45,13 +46,13 @@ func Coverage(lyrics, gems []string) ([]string, []string, float64) {
 	gemset := NewSetFromStrings(gems)
 	diff := lyricset.Difference(gemset)
 	intersect := lyricset.Intersect(gemset)
-	return NewStringsFromSet(diff), NewStringsFromSet(intersect), (float64(intersect.Cardinality()) / float64(lyricset.Cardinality()) * 100)
+	return NewStringsFromSet(diff), NewStringsFromSet(intersect), (float64(len(intersect)) / float64(len(lyricset)) * 100)
 }
 
 //PrepareText lowercases and strips punctuation for any input text (lyrics, poem, tax code)
 //Hilarity ensues here. For example, in Special Ed's "I Got it Made", "I'm kinda young--but my tongue speaks maturity" turns into "youngbut", which is a great gem name
 func PrepareText(text string) string {
-	re := regexp.MustCompile("[^a-zA-Z0-0\\s]")
+	re := regexp.MustCompile("[^a-zA-Z0-9\\s]")
 	clean := re.ReplaceAllString(text, "")
 	return strings.ToLower(clean)
 }
@@ -101,8 +102,8 @@ func main() {
 	diff, intersect, cov := Coverage(strings.Fields(clean), strings.Fields(string(gemlist)))
 	fmt.Printf("\n\nSource: Artist - %v;  Song - %v; Url - %v\n\n", lyric.Artist, lyric.Song, lyric.Url)
 	fmt.Printf("Your song is %f%% covered by the existing gem list\n\n", cov)
-	fmt.Printf("Words found in both the song lyrics and existing gems: %v\n\n", intersect)
-	fmt.Printf("Try out these names for your next gem!\n\n")
+	fmt.Printf("%v Words found in both the song lyrics and existing gems: %v\n\n", len(intersect), intersect)
+	fmt.Printf("Try out any of these %v names for your next gem!\n\n", len(diff))
 	sort.Sort(sort.Reverse(SortedByLen{diff[0:]}))
 	fmt.Printf("%v\n\n", diff)
 }
